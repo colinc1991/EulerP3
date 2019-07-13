@@ -36,6 +36,9 @@ namespace EulerP3
             {
                 Console.WriteLine($"{prime} is prime!");
             }
+
+            // out of all the prime factors, display the largest one
+            Console.WriteLine($"The largest prime factor is {GetHighestValue(primeFactors)}");
         }
 
         static void GetFactors(double number, ref List<double> factors)
@@ -76,6 +79,21 @@ namespace EulerP3
             }
 
             return primeNums;
+        }
+
+        static double GetHighestValue(List<double> factors)
+        {
+            double highestNumber = 0;
+
+            foreach (double item in factors)
+            {
+                if (item > highestNumber)
+                {
+                    highestNumber = item;
+                }
+            }
+
+            return highestNumber;
         }
         
     }
